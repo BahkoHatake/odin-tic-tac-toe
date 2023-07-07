@@ -6,10 +6,11 @@ body{
 }
 .board{
     border: 1px solid black;
-    height: 40vh;
-    width: 40vh;
+    height: 45vh;
+    width: 45vh;
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(3,15vh);
+    grid-template-rows: repeat(3,15vh);
 }
 .board>div{
     border: 1px solid black;
