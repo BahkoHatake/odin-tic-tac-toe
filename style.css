@@ -1,0 +1,20 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    border: 1px solid black;
+    height: 40vh;
+    width: 40vh;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+.board>div{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
