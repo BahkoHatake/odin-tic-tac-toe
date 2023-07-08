@@ -1,9 +1,9 @@
-const fields=document.querySelectorAll(".board>div")
+
 const gameBoard =(()=>{
     const board=["","","","","","","","",""];
     const fillBoard=()=>{
         gameBoard.board.forEach((element,index)=>{
-            fields[index].innerHTML=element
+            displayController.fields[index].innerHTML=element
         })
     };
     const resetBoard=()=>{  
@@ -60,7 +60,29 @@ const gameController=(()=>{
         currentPlayer,
     }
 })();
+const displayController=(()=>{
+    const fields=document.querySelectorAll(".board>div")
+    const name1=document.querySelector(".player-name1")
+    const name2=document.querySelector(".player-name2")
+    const marker1=document.querySelector(".player-marker1")
+    const marker2=document.querySelector(".player-marker2")
+    const displayPlayersNames=()=>{
+        name1.innerHTML=player1.name;
+        name2.innerHTML=player2.name;
+    }
+    const displayPlayersMarkers=()=>{
+        marker1.innerHTML=player1.marker;
+        marker2.innerHTML=player2.marker;
+    }
+    return{
+        fields,
+        displayPlayersNames,
+        displayPlayersMarkers
+    }
+})()
 
-fields.forEach(field=>{field.addEventListener("click",()=>{
+displayController.displayPlayersNames()
+displayController.displayPlayersMarkers()
+displayController.fields.forEach(field=>{field.addEventListener("click",()=>{
     gameController.oneTurn(field.id)
 })})
